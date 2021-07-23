@@ -13,6 +13,11 @@ class Receipt:
         self._discounts = []
 
     def total_price(self):
+        """
+        This function calculates the total amount to be paid also taking into consideration
+        the associated discounts as part of the calculation
+        :return: Total
+        """
         total = 0
         for item in self.items:
             total += item.total_price
@@ -21,9 +26,20 @@ class Receipt:
         return total
 
     def add_product(self, product, quantity, price, total_price):
+        """
+        :param product: Product
+        :param quantity: Number
+        :param price: Number
+        :param total_price: Number
+        :return: None
+        """
         self._items.append(ReceiptItem(product, quantity, price, total_price))
 
     def add_discount(self, discount):
+        """
+        :param discount: Discount
+        :return: None
+        """
         self._discounts.append(discount)
 
     @property

@@ -36,6 +36,7 @@ class ReceiptPrinter:
         line += "\n"
         return line
 
+    # TODO: this function seems extraneous, is it really needed
     def print_price(self, price):
         return "%.2f" % price
 

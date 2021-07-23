@@ -2,7 +2,6 @@ import math
 
 from model_objects import ProductQuantity, SpecialOfferType, Discount
 
-
 class ShoppingCart:
 
     def __init__(self):
@@ -13,8 +12,13 @@ class ShoppingCart:
     def items(self):
         return self._items
 
+    #this method is extraneous
     def add_item(self, product):
         self.add_item_quantity(product, 1.0)
+
+    def empty_cart(self):
+        self._product_quantities.clear()
+        self._items.clear()
 
     @property
     def product_quantities(self):
@@ -27,6 +31,10 @@ class ShoppingCart:
         else:
             self._product_quantities[product] = quantity
 
+
+
+'''
+    # move the handle offers function to tellers class
     def handle_offers(self, receipt, offers, catalog):
         for p in self._product_quantities.keys():
             quantity = self._product_quantities[p]
@@ -66,3 +74,4 @@ class ShoppingCart:
 
                 if discount:
                     receipt.add_discount(discount)
+                    '''
