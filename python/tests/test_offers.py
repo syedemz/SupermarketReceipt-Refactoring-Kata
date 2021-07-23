@@ -38,6 +38,9 @@ class SpecialOfferTest(unittest.TestCase):
         assert (discount.description == '2 for 0.99')
         assert (discount.discount_amount == -0.4950000000000001)
         assert (discount.product == self.toothbrush)
+        nullDiscount = self.teller.two_For_Amount(self.toothbrush, 1, 1, 0.99, self.offer)
+        assert (nullDiscount == None)
+
 
 
 
